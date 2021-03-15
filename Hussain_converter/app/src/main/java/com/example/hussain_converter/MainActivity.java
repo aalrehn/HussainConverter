@@ -1,4 +1,4 @@
-package com.example.HussainAlrehn_converter;
+package com.example.hussain_converter;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -97,11 +97,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void clear (View v){
+    public void clear(View v) {
         textviewMutli.setText("");
 
     }
-    private String converts (String input){
+
+    private String converts(String input) {
 
         if (Radiobutton) {
             return convertKiloToMile(input);
@@ -110,29 +111,31 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-    private String convertMilesToKilo (String input){
+
+    private String convertMilesToKilo(String input) {
         return format.format(Double.parseDouble(input) * 1.60934);
     }
-    private String convertKiloToMile (String input){
+
+    private String convertKiloToMile(String input) {
         return format.format(Double.parseDouble(input) * 0.621371);
 
     }
+
     @Override
-    protected void onSaveInstanceState(Bundle outState){
-        outState.putString("History",textviewMutli.getText().toString());
-        outState.putString("Output",resultValue.getText().toString());
-        outState.putString("input",inputfield.getText().toString());
-        outState.putString("result",result.getText().toString());
+    protected void onSaveInstanceState(Bundle outState) {
+        outState.putString("History", textviewMutli.getText().toString());
+        outState.putString("Output", resultValue.getText().toString());
+        outState.putString("input", inputfield.getText().toString());
+        outState.putString("result", result.getText().toString());
         super.onSaveInstanceState(outState);
     }
+
     @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState){
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         textviewMutli.setText(savedInstanceState.getString("History"));
         result.setText(savedInstanceState.getString("Result"));
         resultValue.setText(savedInstanceState.getString("resultValue"));
     }
 
-
 }
-
